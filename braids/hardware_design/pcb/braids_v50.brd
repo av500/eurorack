@@ -140,6 +140,8 @@
 <text x="71.12" y="16.51" size="1.016" layer="26" ratio="15" rot="MR0">GND</text>
 <text x="77.7875" y="100.33" size="3.81" layer="26" ratio="15" rot="MR0">Braids</text>
 <text x="77.7875" y="98.7425" size="1.016" layer="26" ratio="15" rot="MR0">cc-by-sa Olivier Gillet, 2015. v5</text>
+<wire x1="64.4525" y1="86.6775" x2="66.9925" y2="86.6775" width="0.6096" layer="22"/>
+<wire x1="57.785" y1="86.6775" x2="60.325" y2="86.6775" width="0.6096" layer="22"/>
 </plain>
 <libraries>
 <library name="SparkFun">
@@ -1299,6 +1301,35 @@ EC12E series with push-on switch</description>
 </package>
 </packages>
 </library>
+<library name="jumper">
+<description>&lt;b&gt;Jumpers&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SJ_2">
+<description>&lt;b&gt;Solder jumper&lt;/b&gt;</description>
+<wire x1="2.159" y1="-1.016" x2="-2.159" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="2.159" y1="1.016" x2="2.413" y2="0.762" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-2.413" y1="0.762" x2="-2.159" y2="1.016" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-2.413" y1="-0.762" x2="-2.159" y2="-1.016" width="0.1524" layer="21" curve="90"/>
+<wire x1="2.159" y1="-1.016" x2="2.413" y2="-0.762" width="0.1524" layer="21" curve="90"/>
+<wire x1="2.413" y1="-0.762" x2="2.413" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="-2.413" y1="-0.762" x2="-2.413" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="-2.159" y1="1.016" x2="2.159" y2="1.016" width="0.1524" layer="21"/>
+<wire x1="1.778" y1="0" x2="2.286" y2="0" width="0.1524" layer="51"/>
+<wire x1="-1.778" y1="0" x2="-2.286" y2="0" width="0.1524" layer="51"/>
+<wire x1="0" y1="0.762" x2="0" y2="1.016" width="0.1524" layer="51"/>
+<wire x1="0" y1="-1.016" x2="0" y2="-0.762" width="0.1524" layer="51"/>
+<wire x1="1.016" y1="0.127" x2="1.016" y2="-0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
+<wire x1="-1.016" y1="-0.127" x2="-1.016" y2="0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
+<smd name="1" x="-1.524" y="0" dx="1.1684" dy="1.6002" layer="1"/>
+<smd name="2" x="0" y="0" dx="1.1684" dy="1.6002" layer="1"/>
+<smd name="3" x="1.524" y="0" dx="1.1684" dy="1.6002" layer="1"/>
+<text x="-2.413" y="1.27" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-0.1001" y="0" size="0.02" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.508" y1="-0.762" x2="0.508" y2="0.762" layer="51"/>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1934,6 +1965,14 @@ EC12E series with push-on switch</description>
 <element name="C31" library="rcl" package="C0603" value="100n" x="11.7475" y="53.6575" smashed="yes" rot="R180">
 <attribute name="NAME" x="13.335" y="53.34" size="0.8128" layer="25"/>
 <attribute name="VALUE" x="13.335" y="52.3875" size="0.8128" layer="27"/>
+</element>
+<element name="SJB" library="jumper" package="SJ_2" value="" x="59.84875" y="85.24875" smashed="yes" rot="MR180">
+<attribute name="NAME" x="59.563" y="87.3125" size="1.27" layer="26" ratio="10" rot="MR0"/>
+<attribute name="VALUE" x="59.74865" y="85.24875" size="0.02" layer="28" rot="MR180"/>
+</element>
+<element name="SJA" library="jumper" package="SJ_2" value="" x="64.92875" y="85.24875" smashed="yes" rot="MR0">
+<attribute name="NAME" x="66.548" y="87.3125" size="1.27" layer="26" ratio="10" rot="MR0"/>
+<attribute name="VALUE" x="65.02885" y="85.24875" size="0.02" layer="28" rot="MR0"/>
 </element>
 </elements>
 <signals>
@@ -2669,7 +2708,6 @@ EC12E series with push-on switch</description>
 <wire x1="18.0275" y1="101.385" x2="20.0025" y2="101.385" width="0.254" layer="1"/>
 </signal>
 <signal name="ENC_A">
-<contactref element="SW1" pad="B"/>
 <contactref element="UC1" pad="3"/>
 <wire x1="24.765" y1="59.69" x2="24.765" y2="60.96" width="0.254" layer="1"/>
 <wire x1="24.765" y1="60.96" x2="24.92" y2="61.115" width="0.254" layer="1"/>
@@ -2685,7 +2723,7 @@ EC12E series with push-on switch</description>
 <wire x1="46.99" y1="85.725" x2="47.625" y2="85.09" width="0.254" layer="1"/>
 <wire x1="47.625" y1="85.09" x2="52.07" y2="85.09" width="0.254" layer="1"/>
 <wire x1="52.07" y1="85.09" x2="52.705" y2="84.455" width="0.254" layer="1"/>
-<wire x1="52.705" y1="84.455" x2="67.6275" y2="84.455" width="0.254" layer="1"/>
+<wire x1="52.705" y1="84.455" x2="60.325" y2="84.455" width="0.254" layer="1"/>
 <wire x1="29.21" y1="88.265" x2="35.56" y2="88.265" width="0.254" layer="1"/>
 <wire x1="28.2575" y1="89.2175" x2="29.21" y2="88.265" width="0.254" layer="1"/>
 <wire x1="26.67" y1="89.2175" x2="28.2575" y2="89.2175" width="0.254" layer="1"/>
@@ -2694,15 +2732,21 @@ EC12E series with push-on switch</description>
 <wire x1="24.765" y1="59.69" x2="24.765" y2="60.96" width="0.254" layer="16"/>
 <wire x1="24.765" y1="60.96" x2="25.0825" y2="61.2775" width="0.254" layer="16"/>
 <wire x1="25.0825" y1="61.2775" x2="25.0825" y2="88.265" width="0.254" layer="16"/>
-<wire x1="67.6275" y1="84.455" x2="68.54" y2="83.5425" width="0.254" layer="1"/>
-<wire x1="68.54" y1="83.5425" x2="68.54" y2="82.67" width="0.254" layer="1"/>
 <via x="24.765" y="59.69" extent="1-16" drill="0.6"/>
 <via x="25.0825" y="88.265" extent="1-16" drill="0.6"/>
+<contactref element="SJA" pad="1"/>
+<contactref element="SJB" pad="3"/>
+<wire x1="61.37275" y1="85.24875" x2="61.37275" y2="83.59775" width="0.254" layer="16"/>
+<wire x1="61.37275" y1="83.59775" x2="61.2775" y2="83.5025" width="0.254" layer="16"/>
+<via x="61.2775" y="83.5025" extent="1-16" drill="0.6"/>
+<wire x1="61.2775" y1="83.5025" x2="60.325" y2="84.455" width="0.254" layer="1"/>
+<wire x1="66.45275" y1="85.24875" x2="66.45275" y2="84.3915" width="0.254" layer="16"/>
+<wire x1="66.45275" y1="84.3915" x2="66.04" y2="83.97875" width="0.254" layer="16"/>
+<wire x1="66.04" y1="83.97875" x2="61.75375" y2="83.97875" width="0.254" layer="16"/>
+<wire x1="61.75375" y1="83.97875" x2="61.2775" y2="83.5025" width="0.254" layer="16"/>
 </signal>
 <signal name="ENC_B">
-<contactref element="SW1" pad="A"/>
 <contactref element="UC1" pad="4"/>
-<wire x1="63.1825" y1="83.82" x2="63.5" y2="83.5025" width="0.254" layer="1"/>
 <wire x1="25.7175" y1="60.6425" x2="25.7175" y2="61.2775" width="0.254" layer="1"/>
 <wire x1="25.7175" y1="60.6425" x2="25.7175" y2="80.3275" width="0.254" layer="16"/>
 <wire x1="40.005" y1="86.995" x2="40.64" y2="86.36" width="0.254" layer="1"/>
@@ -2716,17 +2760,30 @@ EC12E series with push-on switch</description>
 <wire x1="46.6725" y1="85.09" x2="47.3075" y2="84.455" width="0.254" layer="1"/>
 <wire x1="47.3075" y1="84.455" x2="51.7525" y2="84.455" width="0.254" layer="1"/>
 <wire x1="51.7525" y1="84.455" x2="52.3875" y2="83.82" width="0.254" layer="1"/>
-<wire x1="52.3875" y1="83.82" x2="63.1825" y2="83.82" width="0.254" layer="1"/>
+<wire x1="52.3875" y1="83.82" x2="58.42" y2="83.82" width="0.254" layer="1"/>
 <wire x1="25.7175" y1="80.3275" x2="27.6225" y2="82.2325" width="0.254" layer="16"/>
 <wire x1="27.6225" y1="82.2325" x2="27.6225" y2="88.265" width="0.254" layer="16"/>
 <wire x1="27.6225" y1="88.265" x2="28.2575" y2="87.63" width="0.254" layer="1"/>
 <wire x1="28.2575" y1="87.63" x2="35.2425" y2="87.63" width="0.254" layer="1"/>
-<wire x1="63.5" y1="83.5025" x2="63.54" y2="83.5025" width="0.254" layer="1"/>
-<wire x1="63.54" y1="83.5025" x2="63.54" y2="82.67" width="0.254" layer="1"/>
 <wire x1="25.7175" y1="61.2775" x2="25.42" y2="61.575" width="0.254" layer="1"/>
 <wire x1="25.42" y1="61.575" x2="25.42" y2="63.695" width="0.254" layer="1"/>
 <via x="25.7175" y="60.6425" extent="1-16" drill="0.6"/>
 <via x="27.6225" y="88.265" extent="1-16" drill="0.6"/>
+<contactref element="SJB" pad="1"/>
+<contactref element="SJA" pad="3"/>
+<via x="59.3725" y="83.5025" extent="1-16" drill="0.6"/>
+<wire x1="59.3725" y1="83.5025" x2="58.7375" y2="83.5025" width="0.254" layer="1"/>
+<wire x1="58.7375" y1="83.5025" x2="58.42" y2="83.82" width="0.254" layer="1"/>
+<wire x1="59.3725" y1="83.5025" x2="59.21375" y2="83.5025" width="0.254" layer="16"/>
+<wire x1="59.21375" y1="83.5025" x2="58.42" y2="84.29625" width="0.254" layer="16"/>
+<wire x1="58.42" y1="84.29625" x2="58.42" y2="85.1535" width="0.254" layer="16"/>
+<wire x1="58.42" y1="85.1535" x2="58.32475" y2="85.24875" width="0.254" layer="16"/>
+<wire x1="63.40475" y1="85.24875" x2="63.40475" y2="86.45525" width="0.254" layer="16"/>
+<wire x1="63.40475" y1="86.45525" x2="63.1825" y2="86.6775" width="0.254" layer="16"/>
+<wire x1="63.1825" y1="86.6775" x2="58.7375" y2="86.6775" width="0.254" layer="16"/>
+<wire x1="58.7375" y1="86.6775" x2="58.42" y2="86.36" width="0.254" layer="16"/>
+<wire x1="58.42" y1="86.36" x2="58.42" y2="85.344" width="0.254" layer="16"/>
+<wire x1="58.42" y1="85.344" x2="58.32475" y2="85.24875" width="0.254" layer="16"/>
 </signal>
 <signal name="ENC_CLICK">
 <contactref element="SW1" pad="E"/>
@@ -3190,14 +3247,18 @@ EC12E series with push-on switch</description>
 <contactref element="IC2" pad="2"/>
 <contactref element="R12" pad="1"/>
 <wire x1="61.595" y1="71.12" x2="61.2775" y2="71.4375" width="0.254" layer="16"/>
-<wire x1="61.2775" y1="71.4375" x2="61.2775" y2="82.8675" width="0.254" layer="16"/>
-<wire x1="61.2775" y1="82.8675" x2="57.6825" y2="82.8675" width="0.254" layer="1"/>
+<wire x1="61.2775" y1="71.4375" x2="61.2775" y2="81.43875" width="0.254" layer="16"/>
+<wire x1="58.57875" y1="82.8675" x2="57.6825" y2="82.8675" width="0.254" layer="1"/>
 <wire x1="64.135" y1="69.9516" x2="64.135" y2="71.12" width="0.254" layer="1"/>
 <wire x1="64.135" y1="71.12" x2="63.8175" y2="71.4375" width="0.254" layer="1"/>
 <wire x1="63.8175" y1="71.4375" x2="61.9125" y2="71.4375" width="0.254" layer="1"/>
 <wire x1="61.9125" y1="71.4375" x2="61.595" y2="71.12" width="0.254" layer="1"/>
 <via x="61.595" y="71.12" extent="1-16" drill="0.6"/>
-<via x="61.2775" y="82.8675" extent="1-16" drill="0.6"/>
+<via x="59.84875" y="82.2325" extent="1-16" drill="0.6"/>
+<wire x1="61.2775" y1="81.43875" x2="60.48375" y2="82.2325" width="0.254" layer="16"/>
+<wire x1="60.48375" y1="82.2325" x2="59.84875" y2="82.2325" width="0.254" layer="16"/>
+<wire x1="58.57875" y1="82.8675" x2="59.21375" y2="82.2325" width="0.254" layer="1"/>
+<wire x1="59.21375" y1="82.2325" x2="59.84875" y2="82.2325" width="0.254" layer="1"/>
 </signal>
 <signal name="N$35">
 <contactref element="IC2" pad="3"/>
@@ -4275,7 +4336,34 @@ EC12E series with push-on switch</description>
 <wire x1="12.5975" y1="53.6575" x2="12.7" y2="53.76" width="0.254" layer="1"/>
 <wire x1="12.7" y1="53.76" x2="12.7" y2="55.865" width="0.254" layer="1"/>
 </signal>
+<signal name="N$76">
+<contactref element="SW1" pad="B"/>
+<contactref element="SJA" pad="2"/>
+<wire x1="68.54" y1="82.67" x2="68.54" y2="83.06625" width="0.254" layer="16"/>
+<wire x1="68.54" y1="83.06625" x2="67.46875" y2="84.1375" width="0.254" layer="16"/>
+<wire x1="67.46875" y1="84.1375" x2="67.46875" y2="86.20125" width="0.254" layer="16"/>
+<wire x1="67.46875" y1="86.20125" x2="66.9925" y2="86.6775" width="0.254" layer="16"/>
+<wire x1="66.9925" y1="86.6775" x2="65.405" y2="86.6775" width="0.254" layer="16"/>
+<wire x1="65.405" y1="86.6775" x2="64.92875" y2="86.20125" width="0.254" layer="16"/>
+<wire x1="64.92875" y1="86.20125" x2="64.92875" y2="85.24875" width="0.254" layer="16"/>
+</signal>
+<signal name="N$11">
+<contactref element="SW1" pad="A"/>
+<contactref element="SJB" pad="2"/>
+<wire x1="59.84875" y1="84.61375" x2="59.84875" y2="85.24875" width="0.254" layer="16"/>
+<wire x1="59.84875" y1="84.61375" x2="60.325" y2="84.1375" width="0.254" layer="16"/>
+<wire x1="60.325" y1="84.1375" x2="60.325" y2="83.185" width="0.254" layer="16"/>
+<wire x1="60.325" y1="83.185" x2="60.96" y2="82.55" width="0.254" layer="16"/>
+<wire x1="60.96" y1="82.55" x2="63.42" y2="82.55" width="0.254" layer="16"/>
+<wire x1="63.42" y1="82.55" x2="63.54" y2="82.67" width="0.254" layer="16"/>
+</signal>
 </signals>
+<errors>
+<approved hash="8,1,e8690c168e62bae7"/>
+<approved hash="8,1,a74d47c7439ab5f6"/>
+<approved hash="8,1,91360d0c1927792a"/>
+<approved hash="8,1,2123357649ac14a2"/>
+</errors>
 </board>
 </drawing>
 </eagle>
