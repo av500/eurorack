@@ -1,6 +1,6 @@
-// Copyright 2013 Olivier Gillet.
+// Copyright 2013 Emilie Gillet.
 //
-// Author: Olivier Gillet (ol.gillet@gmail.com)
+// Author: Emilie Gillet (emilie.o.gillet@gmail.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -44,8 +44,8 @@ class CalibrationData {
   
   void Init();
   
-  inline uint16_t Offset(uint8_t channel, uint16_t value) const {
-    int32_t shifted_value = static_cast<uint32_t>(value);
+  inline uint16_t DacCode(uint8_t channel, int16_t value) const {
+    int32_t shifted_value = 32767 - static_cast<int32_t>(value);
     shifted_value += static_cast<int32_t>(
         calibration_settings_.dac_offset[channel]);
     CONSTRAIN(shifted_value, 0, 65535);
